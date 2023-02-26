@@ -1,3 +1,4 @@
+import { Funcionario } from './funcionario/funcionario';
 import { Component } from '@angular/core';
 
 @Component({
