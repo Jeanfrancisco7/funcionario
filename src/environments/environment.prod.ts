@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  api:'http://localhost:18080/funcionario',
+  api:'http://localhost:18080/',
   index:'././'
 };
