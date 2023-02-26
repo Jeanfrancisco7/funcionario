@@ -1,0 +1,73 @@
+
+<div class="jumbotron mb-0" style="height: 35px;">
+  <h1 class="display-4" style="text-align: center;">Cadastro de Funcionários</h1>
+</div>
+<div class="container">
+<form>
+  <div class="form-group">
+    <label>Nome</label>
+   <input  class="form-control" placeholder="Nome" name="nome" [(ngModel)]="objeto.nome" />
+</div>
+  <div class="form-group">
+    <label for="nomeFuncionario">Nome</label>
+    <input  class="form-control" placeholder="Sobrenome" name="sobrenome" [(ngModel)]="objeto.sobrenome"/>
+  </div>
+  <div class="form-group">
+    <label for="nomeFuncionario">Email</label>
+    <input  class="form-control" placeholder="Email" name="email" [(ngModel)]="objeto.email"/>
+  </div>
+  <div class="form-group">
+    <label>NIS</label>
+    <input class="form-control" placeholder="NIS" name="nis" [(ngModel)]="objeto.nis"/>
+  </div>
+</form>
+<div>
+  <small>{{mensagem}}</small>
+</div>
+  <div  class="row justify-content-end mb-3">
+    <button class="btn btn-primary" type="submit" (click)="save(objeto)">Cadastrar</button>
+  </div>
+</div>
+<div class="container">
+  <div class="card mb-3">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-sm-8 mb-3" >
+              <table class="table col-12">
+                <thead>
+                  <tr>
+                    <th scope="col" >Nome</th>
+                    <th scope="col" >Sobrenome</th>
+                    <th scope="col" >Email</th>
+                    <th scope="col" >NIS</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let row of listaFuncioarios">
+                  <tr>
+                    <th >{{row.nome}}</th>
+                    <td>{{row.sobrenome}}</td>
+                    <td >{{row.email}}</td>
+                    <td>{{row.nis}}</td>
+                    <td >
+                      <button (click)="edit(row)"><i class="bi bi-pencil"></i></button>
+                    </td>
+                    <td>
+                      <button (click)="delete(row)"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <small>Registros: {{registros}}</small>                
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron mb-0">
+  <h1 class="display-4"></h1>
+</div>
+
+
